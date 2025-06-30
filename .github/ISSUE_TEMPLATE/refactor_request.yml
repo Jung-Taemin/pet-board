@@ -1,0 +1,24 @@
+name: "🧹 Refactor"
+description: "코드 리팩토링 제안"
+labels: ["refactor"]
+body:
+  - type: textarea
+    attributes:
+      label: 🧩 리팩토링 설명
+      description: 어떤 부분을 어떻게 개선하고 싶은지 설명해주세요.
+      placeholder: 예: 중복된 코드 제거, 메서드 분리 등
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: ✅ 작업할 내용
+      description: 리팩토링 항목을 체크리스트로 작성해주세요.
+      placeholder: 최대한 세부적으로 작성해주세요!
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: 🙋🏻 참고 자료
+      description: 참고한 리팩토링 문서나 링크가 있다면 작성해주세요.
