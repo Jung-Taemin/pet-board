@@ -1,0 +1,27 @@
+blank_issues_enabled: false
+contact_links: []
+
+issue_templates:
+  - name: "✨ Feature"
+    description: "새로운 기능 추가"
+    title: "[Feature] "
+    labels: ["feature"]
+    file: feature_request.yml
+
+  - name: "🐛 Fix"
+    description: "버그 수정 요청"
+    title: "[Fix] "
+    labels: ["bug"]
+    file: bug_report.yml
+
+  - name: "🧹 Refactor"
+    description: "코드 리팩토링 제안"
+    title: "[Refactor] "
+    labels: ["refactor"]
+    file: refactor_request.yml
+
+  - name: "📝 Docs"
+    description: "문서 작업 요청"
+    title: "[Docs] "
+    labels: ["documentation"]
+    file: documentation_request.yml
