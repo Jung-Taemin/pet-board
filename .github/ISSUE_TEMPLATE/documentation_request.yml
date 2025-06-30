@@ -1,5 +1,6 @@
 name: "📝 Docs"
 description: "문서 작업 요청"
+title: "[Docs] "
 labels: ["documentation"]
 body:
   - type: textarea

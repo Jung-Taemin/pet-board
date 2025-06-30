@@ -1,5 +1,6 @@
 name: "🧹 Refactor"
 description: "코드 리팩토링 제안"
+title: "[Refactor] "
 labels: ["refactor"]
 body:
   - type: textarea

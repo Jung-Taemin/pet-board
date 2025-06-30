@@ -1,5 +1,6 @@
 name: "🐛 Fix"
 description: "버그 수정 요청"
+title: "[Fix] "
 labels: ["bug"]
 body:
   - type: textarea
