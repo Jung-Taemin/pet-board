@@ -1,5 +1,6 @@
 # pet-board
 
+```text
 ├── global                            # 전역 설정 및 공통 처리
 │   ├── config                        # CORS, Swagger, S3, Security 설정 등
 │   ├── exception                     # 예외 처리 전역
