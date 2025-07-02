@@ -1,84 +1,50 @@
 # pet-board
 
 ```text
-├── global                            # 전역 설정 및 공통 처리
-│   ├── config                        # CORS, Swagger, S3, Security 설정 등
-│   ├── exception                     # 예외 처리 전역
-│   │   ├── GlobalExceptionHandler.java
-│   │   ├── CustomException.java
-│   │   └── ErrorCode.java
-│   ├── response                      # 공통 응답 포맷
-│   │   ├── ApiResponse.java
-│   │   └── ResponseUtil.java
-│   ├── security                      # JWT, 필터, 시큐리티 설정
-│   │   ├── JwtTokenProvider.java
-│   │   ├── JwtAuthenticationFilter.java
-│   │   ├── SecurityConfig.java
-│   │   └── UserDetailsImpl.java
-│   └── util                          # 공통 유틸 클래스
-│       └── S3Uploader.java
+├── global                     # 공통 설정, 예외 처리, 응답 포맷 등
+│   ├── config                 # JWT, CORS, Swagger 등
+│   ├── exception              # 예외 처리
+│   ├── response               # 공통 응답 객체
+│   └── util                   # 파일 업로드 등 유틸
 │
-├── domain                            # 핵심 도메인 기능별로 구성
-│   ├── user                          # 회원가입, 로그인, 권한 관리
+├── domain
+│   ├── user                   # 회원 가입, 로그인, 마이페이지
 │   │   ├── controller
-│   │   ├── dto
-│   │   │   ├── UserRequestDto.java
-│   │   │   ├── UserResponseDto.java
-│   │   │   └── LoginDto.java
-│   │   ├── entity
-│   │   │   └── User.java
-│   │   ├── repository
 │   │   ├── service
-│   │   └── validator                 # 이메일/비밀번호 유효성 검사 등
-│
-│   ├── post                          # 게시판 (자유게시판, 공지사항)
-│   │   ├── controller
-│   │   ├── dto
-│   │   │   ├── PostRequestDto.java
-│   │   │   └── PostResponseDto.java
-│   │   ├── entity
-│   │   │   └── Post.java
 │   │   ├── repository
+│   │   ├── dto
+│   │   └── entity
+│   │
+│   ├── freeboard              # 자유게시판
+│   │   ├── controller
 │   │   ├── service
-│   │   └── type                      # 게시판 유형 enum (자유/공지)
-│   │       └── PostCategory.java
-│
-│   ├── comment                       # 게시글 댓글
-│   │   ├── controller
-│   │   ├── dto
-│   │   ├── entity
 │   │   ├── repository
-│   │   └── service
-│
-│   ├── photo                         # 사진첩, 좋아요 등
-│   │   ├── controller
 │   │   ├── dto
-│   │   │   ├── PhotoRequestDto.java
-│   │   │   └── PhotoResponseDto.java
-│   │   ├── entity
-│   │   │   ├── Photo.java
-│   │   │   └── PhotoLike.java
-│   │   ├── repository
-│   │   └── service
-│
-│   ├── item                          # 반려동물 물품 공유
+│   │   └── entity
+│   │
+│   ├── tradeboard             # 중고거래 게시판
+│   │   └── (동일 구조)
+│   │
+│   ├── noticeboard            # 공지사항 (관리자 전용)
+│   │   └── (동일 구조)
+│   │
+│   ├── photoboard             # 사진자랑 (사진 + 좋아요)
 │   │   ├── controller
-│   │   ├── dto
-│   │   │   ├── ItemRequestDto.java
-│   │   │   └── ItemResponseDto.java
-│   │   ├── entity
+│   │   ├── service
 │   │   ├── repository
-│   │   └── service
+│   │   ├── dto
+│   │   └── entity
+│   │
+│   ├── comment                # 댓글 (공통 댓글 기능)
+│   │   └── (자유게시판/장터/사진 등에 연결)
+│   │
+│   ├── like                   # 좋아요 (사진자랑용)
+│   │   └── (Photoboard와 연결)
+│   │
+│   ├── message                # 쪽지 기능
+│   │   └── ...
+│   │
+│   └── admin                  # 관리자 전용 (회원관리 등)
+│       └── ...
 │
-│   └── admin                         # 관리자 전용 기능 (공지 등록, 사용자 관리 등)
-│       ├── controller
-│       ├── service
-│       └── dto
-│
-├── common                            # 공통 상수, Enum 등
-│   ├── constants
-│   │   └── AuthConstants.java
-│   └── enums
-│       ├── UserRole.java
-│       ├── PostCategory.java
-│       └── FileType.java
+└── PetBoardApplication.java
