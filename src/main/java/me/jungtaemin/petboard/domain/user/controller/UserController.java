@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import me.jungtaemin.petboard.domain.user.dto.UserSignUpRequestDto;
 import me.jungtaemin.petboard.domain.user.dto.UserSignUpResponseDto;
 import me.jungtaemin.petboard.domain.user.service.UserService;
+import me.jungtaemin.petboard.global.response.ApiResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,8 +23,8 @@ public class UserController {
 
     @PostMapping("/signup")
     @Operation(summary = "회원가입", description = "이메일, 비밀번호, 닉네임을 통해 회원가입을 진행합니다.")
-    public ResponseEntity<UserSignUpResponseDto> signup(@RequestBody UserSignUpRequestDto request) {
+    public ResponseEntity<ApiResponse<UserSignUpResponseDto>> signup(@RequestBody UserSignUpRequestDto request) {
         UserSignUpResponseDto response = userService.signup(request);
-        return ResponseEntity.ok(response);
+        return ResponseEntity.ok(ApiResponse.success(response, "회원가입 성공"));
     }
 }
