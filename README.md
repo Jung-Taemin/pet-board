@@ -22,7 +22,7 @@
 │   │   ├── dto
 │   │   └── entity
 │   │
-│   ├── tradeboard             # 중고거래 게시판
+│   ├── resellboard             # 중고거래 게시판
 │   │   └── (동일 구조)
 │   │
 │   ├── noticeboard            # 공지사항 (관리자 전용)
