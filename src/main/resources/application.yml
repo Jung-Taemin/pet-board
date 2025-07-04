@@ -25,3 +25,6 @@ spring:
       path: /swagger-ui.html
       operations-sorter: method
       tags-sorter: alpha
+
+jwt:
+  secret: yX7p#Zq@fE9$uWk!aD2oLmNvRtYxQzCv
